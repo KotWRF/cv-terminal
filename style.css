@@ -1,16 +1,27 @@
 body {
-    background-color: #1e1e1e;
+    background-color: #1a1a1a;
+    /* Цвет фона "вне" фонарика */
+    background-image: radial-gradient(circle at var(--x, 80%) var(--y, 80%),
+            #2a2a2d 0%,
+            #1a1a1a 15%);
+    background-attachment: fixed;
     color: #d4d4d4;
     font-family: 'Consolas', 'Monaco', monospace;
     margin: 0;
     padding: 50px 20px;
+    min-height: 100vh;
 }
 
+
 .code-container {
-    background: #252527;
+    /* Меняем сплошной цвет на полупрозрачный */
+    background: rgba(37, 37, 39, 0.85);
+    /* Добавляем эффект матового стекла  */
+    backdrop-filter: blur(2px);
+
     padding: 20px 0 !important;
     border-radius: 8px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
     border: 1px solid #333;
     overflow: hidden;
     max-width: 900px;
@@ -21,28 +32,156 @@ body {
 }
 
 .line {
+    opacity: 0;
+    transition: opacity 0.3s ease;
     display: block;
     width: 100%;
-    padding: 2px 40px; /* Базовый отступ */
+    padding: 2px 20px;
     box-sizing: border-box;
     margin: 0 !important;
-    transition: background-color 0.05s;
+    transition: background-color 0.2s ease;
+    
 }
 
-.line:hover { background-color: #2a2d2e !important; }
+.line:hover {
+    background-color: #2a2d2e !important;
+}
 
-/* Уровни вложенности (Табуляция) */
-.i1 { padding-left: 65px !important; }
-.i2 { padding-left: 90px !important; }
-.i3 { padding-left: 115px !important; }
+/* Отступы для уровней вложенности */
+.i1 {
+    padding-left: 40px;
+}
+
+.i2 {
+    padding-left: 60px;
+}
+
+.i3 {
+    padding-left: 80px;
+}
+
+.i4 {
+    padding-left: 100px;
+}
+
+.i5 {
+    padding-left: 120px;
+}
 
 /* Цвета */
-.keyword { color: #569cd6; }
-.variable { color: #9cdcfe; }
-.key { color: #4fc1ff; }
-.string { color: #ce9178; }
-.number { color: #b5cea8; }
-.brace { color: #ffd700; }
-.comment { color: #7f848e; font-style: italic; margin-left: 10px; }
-.string a { color: inherit; text-decoration: underline; opacity: 0.8; }
-.string a:hover { opacity: 1; color: #fff; }
+.keyword {
+    color: #569cd6;
+}
+
+.variable {
+    color: #9cdcfe;
+}
+
+.key {
+    color: #4fc1ff;
+}
+
+.string {
+    color: #ce9178;
+}
+
+.number {
+    color: #b5cea8;
+}
+
+.brace {
+    color: #ffd700;
+}
+
+.comment {
+    color: #7f848e;
+    font-style: italic;
+    margin-left: 10px;
+}
+
+.string a {
+    color: inherit;
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
+.string a:hover {
+    opacity: 1;
+    color: #fff;
+}
+
+
+.string a,
+.string span[onclick],
+.string[onclick] {
+    cursor: pointer !important;
+}
+
+
+
+/* Цвет выделения для всего сайта */
+::selection {
+    background-color: rgba(71, 114, 171, 0.25);
+    /* Спокойный сине-серый с прозрачностью */
+    color: #ffffff;
+    /* Текст станет белым при выделении */
+}
+
+/* Для браузеров типа Firefox (иногда нужен этот префикс) */
+::-moz-selection {
+    background-color: rgba(71, 114, 171, 0.25);
+    color: #ffffff;
+}
+
+
+/* неТени */
+.keyword {
+    color: #569cd6;
+    text-shadow: 0 0 5px rgba(86, 156, 214, 0.3);
+}
+
+.string {
+    color: #ce9178;
+    text-shadow: 0 0 5px rgba(206, 145, 120, 0.3);
+}
+
+.variable {
+    color: #9cdcfe;
+    text-shadow: 0 0 5px rgba(156, 220, 254, 0.3);
+}
+
+
+#matrix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    /* Явно на всю ширину вьюпорта */
+    height: 100vh;
+    /* На всю высоту вьюпорта */
+    z-index: -1;
+    opacity: 0.1;
+    /* Сделал чуть тусклее, чтобы не "грязнило" фон */
+    display: block;
+}
+
+
+
+/* Стилизация скроллбара */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 5px;
+    border: 2px solid #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #444;
+}
