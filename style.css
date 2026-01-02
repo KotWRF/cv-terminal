@@ -31,10 +31,6 @@ body {
 
 .line { margin-bottom: 5px; }
 
-.line:hover {
-    background-color: #2a2d2e; /* Цвет подсветки как в VS Code */
-    cursor: pointer;
-}
 .indent { padding-left: 25px; }
 
 .string a {
@@ -52,4 +48,9 @@ body {
     color: #7f848e; 
     font-style: italic;
     margin-left: 10px; 
+}
+
+.line:hover {
+    background-color: #2a2d2e; /* Цвет подсветки как в VS Code */
+    cursor: pointer;
 }
