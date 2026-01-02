@@ -30,6 +30,11 @@ body {
 .comment { color: #6a9955; }
 
 .line { margin-bottom: 5px; }
+
+.line:hover {
+    background-color: #2a2d2e; /* Цвет подсветки как в VS Code */
+    cursor: pointer;
+}
 .indent { padding-left: 25px; }
 
 .string a {
