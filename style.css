@@ -29,7 +29,11 @@ body {
 .brace { color: #ffd700; }
 .comment { color: #6a9955; }
 
-.line { margin-bottom: 5px; }
+.line {
+    padding-top: 2px;
+    padding-bottom: 2px; /* Регулируй эти цифры, чтобы увеличить расстояние */
+    display: block;
+}
 
 .indent { padding-left: 25px; }
 
