@@ -1,0 +1,50 @@
+body {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    font-family: 'Consolas', 'Monaco', monospace;
+    display: block; 
+    padding: 50px 20px; 
+    min-height: 100vh;
+    margin: 0;
+}
+
+.code-container {
+    background: #252527;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    border: 1px solid #333;
+    position: relative;
+    overflow: hidden;
+    max-width: 900px; 
+    margin: 0 auto;   
+}
+
+/* Цвета синтаксиса */
+.keyword { color: #569cd6; }
+.variable { color: #9cdcfe; }
+.key { color: #4fc1ff; }
+.string { color: #ce9178; }
+.number { color: #b5cea8; }
+.brace { color: #ffd700; }
+.comment { color: #6a9955; }
+
+.line { margin-bottom: 5px; }
+.indent { padding-left: 25px; }
+
+.string a {
+    color: inherit; 
+    text-decoration: underline; 
+    opacity: 0.8;
+}
+
+.string a:hover {
+    opacity: 1;
+    color: #fff; 
+}
+
+.comment {
+    color: #7f848e; 
+    font-style: italic;
+    margin-left: 10px; 
+}
