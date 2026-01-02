@@ -30,9 +30,16 @@ body {
 .comment { color: #6a9955; }
 
 .line {
-    padding-top: 2px;
-    padding-bottom: 2px; /* Регулируй эти цифры, чтобы увеличить расстояние */
-    display: block;
+    display: block;          /* Растягивает строку на всю ширину */
+    width: 100%;             /* Чтобы подсветка шла до правого края */
+    padding: 2px 0 2px 20px; /* Сверху/снизу по 2px, слева отступ 20px */
+    box-sizing: border-box;  /* Чтобы отступы не ломали ширину */
+    transition: background-color 0.1s; /* Плавное появление подсветки */
+}
+
+.line:hover {
+    background-color: #2a2d2e; /* Цвет подсветки как в VS Code */
+    cursor: text;
 }
 
 .indent { padding-left: 25px; }
@@ -54,7 +61,3 @@ body {
     margin-left: 10px; 
 }
 
-.line:hover {
-    background-color: #2a2d2e; /* Цвет подсветки как в VS Code */
-    cursor: pointer;
-}
